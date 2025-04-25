@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="https://NEXEFPHX01.MADRID.ORG:8001/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://NEXEFPHX01.MADRID.ORG:8001/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://NEXEFPHX01.MADRID.ORG:8001/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://NEXEFPHX01.MADRID.ORG:8001/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://NEXEFPHX01.MADRID.ORG:8001/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://NEXEFPHX01.MADRID.ORG:8001/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://NEXEFPHX01.MADRID.ORG:8001/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://NEXEFPHX01.MADRID.ORG:8001/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://NEXEFPHX01.MADRID.ORG:8001/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://NEXEFPHX01.MADRID.ORG:8001/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZFGG_PECA_ODATA_HORAS_EXT_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="ZFGG_CDS_ANUALID_VHType" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="contcode"/>
+                    <PropertyRef Name="cod_anualidad"/>
+                </Key>
+                <Property Name="contcode" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:filter-restriction="single-value" sap:required-in-filter="true" sap:label="" sap:value-list="standard"/>
+                <Property Name="cod_anualidad" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:label=""/>
+                <Property Name="descont" Type="Edm.String" MaxLength="30" sap:label=""/>
+                <Property Name="fecha_desde" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label=""/>
+                <Property Name="fecha_hasta" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label=""/>
+            </EntityType>
+            <EntityType Name="ZFGG_CDS_CONTCODE_VHType" sap:label="Value Help Contcode" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="contcode"/>
+                </Key>
+                <Property Name="contcode" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:label=""/>
+                <Property Name="descont" Type="Edm.String" MaxLength="30" sap:label=""/>
+            </EntityType>
+            <EntityType Name="ZFGG_CDS_ESCECODE_VHType" sap:label="Value Help EsceCode" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="contcode"/>
+                    <PropertyRef Name="descont"/>
+                    <PropertyRef Name="escecode"/>
+                </Key>
+                <Property Name="contcode" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:label=""/>
+                <Property Name="descont" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Contrato" sap:quickinfo=""/>
+                <Property Name="escecode" Type="Edm.String" Nullable="false" MaxLength="3" sap:display-format="NonNegative" sap:label=""/>
+                <Property Name="txtescecode" Type="Edm.String" MaxLength="255" sap:label=""/>
+            </EntityType>
+            <EntityType Name="ZFGG_CDS_ESTADOS_VHType" sap:label="Value Help Tipo Trabajo" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="fasecode"/>
+                </Key>
+                <Property Name="fasecode" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label=""/>
+                <Property Name="txtfasecode" Type="Edm.String" MaxLength="255" sap:label=""/>
+            </EntityType>
+            <EntityType Name="ZFGG_CDS_GRUPOCODE_VHType" sap:label="Value Help GrupoCode" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="contcode"/>
+                    <PropertyRef Name="descont"/>
+                    <PropertyRef Name="grupocode"/>
+                </Key>
+                <Property Name="contcode" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:label=""/>
+                <Property Name="descont" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Contrato" sap:quickinfo=""/>
+                <Property Name="grupocode" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label=""/>
+                <Property Name="txtgrupocode" Type="Edm.String" MaxLength="255" sap:label=""/>
+            </EntityType>
+            <EntityType Name="ZFGG_CDS_IDTRAB_VHType" sap:label="Value Help Id Trabajo" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="contcode"/>
+                    <PropertyRef Name="descont"/>
+                    <PropertyRef Name="idtrabajo"/>
+                </Key>
+                <Property Name="contcode" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:label=""/>
+                <Property Name="descont" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Contrato" sap:quickinfo=""/>
+                <Property Name="idtrabajo" Type="Edm.String" Nullable="false" MaxLength="13" sap:display-format="UpperCase" sap:label=""/>
+                <Property Name="titulotr" Type="Edm.String" MaxLength="200" sap:label=""/>
+            </EntityType>
+            <EntityType Name="ZFGG_CDS_TIPTRAB_VHType" sap:label="Value Help Tipo Trabajo" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="contcode"/>
+                    <PropertyRef Name="descont"/>
+                    <PropertyRef Name="trabajocode"/>
+                </Key>
+                <Property Name="contcode" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:label=""/>
+                <Property Name="descont" Type="Edm.String" Nullable="false" MaxLength="30" sap:label="Contrato" sap:quickinfo=""/>
+                <Property Name="trabajocode" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label=""/>
+                <Property Name="Txttrabajo" Type="Edm.String" MaxLength="255" sap:label="Desc. Trabajo"/>
+            </EntityType>
+            <EntityType Name="ZFGG__CDS_INF_HORAS_EXTType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CodigoContrato"/>
+                    <PropertyRef Name="IdTrabajo"/>
+                    <PropertyRef Name="Anualidad"/>
+                    <PropertyRef Name="PerfGlobal"/>
+                </Key>
+                <Property Name="CodigoContrato" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="NonNegative" sap:label=""/>
+                <Property Name="IdTrabajo" Type="Edm.String" Nullable="false" MaxLength="13" sap:display-format="UpperCase" sap:label="" sap:value-list="standard"/>
+                <Property Name="Anualidad" Type="Edm.String" Nullable="false" MaxLength="30" sap:display-format="UpperCase" sap:filter-restriction="single-value" sap:required-in-filter="true" sap:label="" sap:value-list="standard"/>
+                <Property Name="PerfGlobal" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="ContCode" Type="Edm.String" MaxLength="30" sap:filter-restriction="single-value" sap:required-in-filter="true" sap:label="" sap:value-list="standard"/>
+                <Property Name="Txtgrupocode" Type="Edm.String" MaxLength="255" sap:label="" sap:value-list="standard"/>
+                <Property Name="Txtescecode" Type="Edm.String" MaxLength="255" sap:label="" sap:value-list="standard"/>
+                <Property Name="TituTrabjo" Type="Edm.String" MaxLength="200" sap:label=""/>
+                <Property Name="DescTrabjo" Type="Edm.String" MaxLength="1000" sap:label="Text of length 1000" sap:heading=""/>
+                <Property Name="estado" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="" sap:value-list="standard"/>
+                <Property Name="TrabCode" Type="Edm.String" MaxLength="10" sap:display-format="UpperCase" sap:label="" sap:value-list="standard"/>
+                <Property Name="FechInVal" Type="Edm.DateTimeOffset" Precision="0" sap:label=""/>
+                <Property Name="FechLimVal" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Date"/>
+                <Property Name="FechFinVal" Type="Edm.DateTimeOffset" Precision="0" sap:label=""/>
+                <Property Name="Fech1Eje" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label=""/>
+                <Property Name="FechIniEje" Type="Edm.DateTimeOffset" Precision="0" sap:label=""/>
+                <Property Name="FechLimEje" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Date"/>
+                <Property Name="FechFinEje" Type="Edm.DateTimeOffset" Precision="0" sap:label=""/>
+                <Property Name="FechCierre" Type="Edm.DateTimeOffset" Precision="0" sap:label=""/>
+                <Property Name="horasvarini" Type="Edm.Decimal" Precision="7" Scale="2" sap:label=""/>
+                <Property Name="HPrev" Type="Edm.Decimal" Precision="8" Scale="2"/>
+                <Property Name="HComp" Type="Edm.Decimal" Precision="8" Scale="2"/>
+                <Property Name="HEjec" Type="Edm.Decimal" Precision="8" Scale="2"/>
+                <Property Name="HCrr" Type="Edm.Decimal" Precision="8" Scale="2"/>
+            </EntityType>
+            <ComplexType Name="excel">
+                <Property Name="Val" Type="Edm.Binary" Nullable="false" sap:label="Binary String" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </ComplexType>
+            <EntityContainer Name="ZFGG_PECA_ODATA_HORAS_EXT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZFGG_CDS_ANUALID_VH" EntityType="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG_CDS_ANUALID_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:requires-filter="true" sap:content-version="1"/>
+                <EntitySet Name="ZFGG_CDS_CONTCODE_VH" EntityType="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG_CDS_CONTCODE_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFGG_CDS_ESCECODE_VH" EntityType="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG_CDS_ESCECODE_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFGG_CDS_ESTADOS_VH" EntityType="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG_CDS_ESTADOS_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFGG_CDS_GRUPOCODE_VH" EntityType="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG_CDS_GRUPOCODE_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFGG_CDS_IDTRAB_VH" EntityType="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG_CDS_IDTRAB_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFGG_CDS_TIPTRAB_VH" EntityType="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG_CDS_TIPTRAB_VHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZFGG__CDS_INF_HORAS_EXT" EntityType="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG__CDS_INF_HORAS_EXTType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:requires-filter="true" sap:content-version="1"/>
+                <FunctionImport Name="getExcel" ReturnType="ZFGG_PECA_ODATA_HORAS_EXT_SRV.excel" m:HttpMethod="GET">
+                    <Parameter Name="Contenido" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Anualidad" Type="Edm.String" Mode="In"/>
+                    <Parameter Name="Contcode" Type="Edm.String" Mode="In"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG_CDS_ANUALID_VHType/contcode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help Contcode"/>
+                        <PropertyValue Property="CollectionPath" String="ZFGG_CDS_CONTCODE_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="contcode"/>
+                                    <PropertyValue Property="ValueListProperty" String="contcode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="descont"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG__CDS_INF_HORAS_EXTType/IdTrabajo" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help Id Trabajo"/>
+                        <PropertyValue Property="CollectionPath" String="ZFGG_CDS_IDTRAB_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ContCode"/>
+                                    <PropertyValue Property="ValueListProperty" String="descont"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="IdTrabajo"/>
+                                    <PropertyValue Property="ValueListProperty" String="idtrabajo"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="contcode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="titulotr"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG__CDS_INF_HORAS_EXTType/Anualidad" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="ZFGG_CDS_ANUALID_VH"/>
+                        <PropertyValue Property="CollectionPath" String="ZFGG_CDS_ANUALID_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Anualidad"/>
+                                    <PropertyValue Property="ValueListProperty" String="cod_anualidad"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ContCode"/>
+                                    <PropertyValue Property="ValueListProperty" String="descont"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="fecha_desde"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="fecha_hasta"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG__CDS_INF_HORAS_EXTType/ContCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help Contcode"/>
+                        <PropertyValue Property="CollectionPath" String="ZFGG_CDS_CONTCODE_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ContCode"/>
+                                    <PropertyValue Property="ValueListProperty" String="descont"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="contcode"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG__CDS_INF_HORAS_EXTType/Txtgrupocode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help GrupoCode"/>
+                        <PropertyValue Property="CollectionPath" String="ZFGG_CDS_GRUPOCODE_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ContCode"/>
+                                    <PropertyValue Property="ValueListProperty" String="descont"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Txtgrupocode"/>
+                                    <PropertyValue Property="ValueListProperty" String="txtgrupocode"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG__CDS_INF_HORAS_EXTType/Txtescecode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help EsceCode"/>
+                        <PropertyValue Property="CollectionPath" String="ZFGG_CDS_ESCECODE_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ContCode"/>
+                                    <PropertyValue Property="ValueListProperty" String="descont"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="Txtescecode"/>
+                                    <PropertyValue Property="ValueListProperty" String="txtescecode"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG__CDS_INF_HORAS_EXTType/estado" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help Tipo Trabajo"/>
+                        <PropertyValue Property="CollectionPath" String="ZFGG_CDS_ESTADOS_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="estado"/>
+                                    <PropertyValue Property="ValueListProperty" String="fasecode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="txtfasecode"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG__CDS_INF_HORAS_EXTType/TrabCode" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Value Help Tipo Trabajo"/>
+                        <PropertyValue Property="CollectionPath" String="ZFGG_CDS_TIPTRAB_VH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Txttrabajo"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ContCode"/>
+                                    <PropertyValue Property="ValueListProperty" String="descont"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="TrabCode"/>
+                                    <PropertyValue Property="ValueListProperty" String="trabajocode"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG_PECA_ODATA_HORAS_EXT_SRV_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG_PECA_ODATA_HORAS_EXT_SRV_Entities/ZFGG_CDS_ANUALID_VH" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="RequiresFilter" Bool="true"/>
+                        <PropertyValue Property="RequiredProperties">
+                            <Collection>
+                                <PropertyPath>contcode</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="contcode"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZFGG_PECA_ODATA_HORAS_EXT_SRV.ZFGG_PECA_ODATA_HORAS_EXT_SRV_Entities/ZFGG__CDS_INF_HORAS_EXT" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="RequiresFilter" Bool="true"/>
+                        <PropertyValue Property="RequiredProperties">
+                            <Collection>
+                                <PropertyPath>Anualidad</PropertyPath>
+                                <PropertyPath>ContCode</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Anualidad"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="ContCode"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://NEXEFPHX01.MADRID.ORG:8001/sap/opu/odata/sap/ZFGG_PECA_ODATA_HORAS_EXT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://NEXEFPHX01.MADRID.ORG:8001/sap/opu/odata/sap/ZFGG_PECA_ODATA_HORAS_EXT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
