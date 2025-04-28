@@ -7,7 +7,6 @@
         "https://*.cfapps.eu10-005.hana.ondemand.com/**"
       ]
     },
-
   "scopes": [
     {
       "name": "uaa.user",
